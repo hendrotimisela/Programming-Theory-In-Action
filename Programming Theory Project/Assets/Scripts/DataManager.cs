@@ -19,6 +19,17 @@ public class DataManager : MonoBehaviour
         }
     }
 
+    private float m_Money = 50;
+    public float Money
+    {
+        get { return m_Money; }
+        set {
+            if (value >= 0) {
+                m_Money = value;
+            }
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
