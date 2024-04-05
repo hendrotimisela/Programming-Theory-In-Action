@@ -30,6 +30,7 @@ public class CameraController : MonoBehaviour
         UpdateCameraTransform();
     }
 
+    // ABSTRACTION
     void UpdateCameraTransform() {
         Quaternion rotation = Quaternion.Euler(RotateY, RotateX, 0);
         transform.position = target.transform.position - (rotation * Vector3.forward * Distance);

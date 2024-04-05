@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -26,9 +27,14 @@ public class DataManager : MonoBehaviour
         set {
             if (value >= 0) {
                 m_Money = value;
+                if (moneyText) {
+                    moneyText.text = m_PlayerName+": "+m_Money.ToSafeString()+"$";
+                }
             }
         }
     }
+
+    public TextMeshProUGUI moneyText;
 
     // Start is called before the first frame update
     void Start()

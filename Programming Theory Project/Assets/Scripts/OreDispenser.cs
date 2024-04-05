@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// INHERITANCE
 public class OreDispenser : Building
 {
     [SerializeField] private GameObject OrePrefab;
@@ -22,7 +23,9 @@ public class OreDispenser : Building
 
     IEnumerator DispenseOres() {
         while (true) {
-            Instantiate(OrePrefab, DispenseObject.transform.position, OrePrefab.transform.rotation);
+            if (placed) {
+                Instantiate(OrePrefab, DispenseObject.transform.position, OrePrefab.transform.rotation);
+            }
             yield return new WaitForSeconds(dispenseRate);
         }
     }
